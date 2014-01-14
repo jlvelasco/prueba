@@ -1,0 +1,44 @@
+function lista(texto) {
+
+	var myWindow = window.open("", "MsgWindow", "width=600,height=800");
+	myWindow.document.write("<p>Lista</p>");
+
+	for ( i = 0; i < 11; i++) {
+		var n = texto.replace("*", i);
+		myWindow.document.write(n);
+		myWindow.document.write("<br>");
+	}
+}
+
+function listaCuadros(texto) {
+
+	var myWindow = window.open("", "MsgWindow", "resizable=1,scrollbars=1,width=600,height=800");
+	myWindow.document.write("<p>Lista</p>");
+	
+	var izder=0;
+	myWindow.document.write("<table width='100%' heigth = '200' border='1' align='center'>");
+	
+	for ( i = 0; i < 10; i++) {
+		var dir = texto.replace("*", i);
+    if (izder==0){
+  		myWindow.document.write("<tr><td> ");
+  		}
+  	else {
+  	  myWindow.document.write("<td>");
+  	  }
+		myWindow.document.write("<a href='");
+		myWindow.document.write(dir);
+		myWindow.document.write("'> <img src='");
+		myWindow.document.write(dir);
+   	myWindow.document.write("' width='240'> </a> <br>");
+		myWindow.document.write(dir);
+		if (izder==0){
+  		myWindow.document.write(" </td> <td>");
+  		izder=1;}
+  	else {
+  	  myWindow.document.write(" </td> </tr> <tr> <td>");
+  	  izder=0;}
+	}
+		myWindow.document.write("</table>");
+}
+
